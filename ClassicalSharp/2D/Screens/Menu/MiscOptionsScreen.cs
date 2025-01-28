@@ -17,9 +17,9 @@ namespace ClassicalSharp.Gui.Screens {
 			validators[0]    = new RealValidator(1, 1024);
 			defaultValues[0] = "5";
 			validators[1]    = new IntegerValidator(0, 100);
-			defaultValues[1] = "0";
+			defaultValues[1] = "100";
 			validators[2]    = new IntegerValidator(0, 100);
-			defaultValues[2] = "0";
+			defaultValues[2] = "100";
 			validators[7]    = new IntegerValidator(1, 200);
 			defaultValues[7] = "30";
 		}
