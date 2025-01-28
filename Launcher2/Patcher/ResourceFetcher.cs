@@ -23,7 +23,7 @@ namespace Launcher.Patcher {
 		const string jar162Uri = "http://launcher.mojang.com/mc/game/1.6.2/client/b6cb68afde1d9cf4a20cbf27fa90d0828bf440a4/client.jar";
 		const string pngTerrainPatchUri = "http://static.classicube.net/terrain-patch2.png";
 		const string pngGuiPatchUri = "http://static.classicube.net/gui.png";
-		public const string assetsUri = "http://resources.download.minecraft.net/";
+		public const string assetsUri = "https://resources.download.minecraft.net/";
 		
 		public void DownloadItems(AsyncDownloader downloader, Action<string> setStatus) {
 			this.downloader = downloader;

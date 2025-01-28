@@ -217,7 +217,8 @@ public interface IGameComponent { }
 		}
 		
 		void ProcessRequest(Request request) {
-			string url = request.Url;
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Ssl3 | (SecurityProtocolType)(0xc0 | 0x300 | 0xc00);
+            string url = request.Url;
 			Utils.LogDebug("Downloading {0} from: {1}", request.Type, url);
 			HttpStatusCode status = HttpStatusCode.OK;
 			
