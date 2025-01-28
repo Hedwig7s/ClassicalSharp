@@ -71,7 +71,6 @@ namespace ClassicalSharp {
 		public const string ClassicTabList = "nostalgia-classictablist";
 		public const string ClassicOptions = "nostalgia-classicoptions";
 		public const string ClassicHacks = "nostalgia-hacks";
-		public const string CClient = "c-client";
 		#if !LAUNCHER
 		public const string ClassicArmModel = "nostalgia-classicarm";
 		public const string MaxChunkUpdates = "gfx-maxchunkupdates";	

@@ -239,7 +239,7 @@ namespace Launcher.Web {
 		}
 	}
 	
-	public sealed class UpdateCClientTask : WebTask {
+	/*public sealed class UpdateCClientTask : WebTask {
 		public UpdateCClientTask(string file) {
 			identifier = "CC CClient download";
 			uri = "http://cs.classicube.net/c_client/latest/" + file;
@@ -254,7 +254,7 @@ namespace Launcher.Web {
 		protected override void Handle(Request req) {
 			File = (byte[])req.Data;
 		}
-	}
+	}*/
 	
 	
 	public sealed class FetchFlagsTask : WebTask {

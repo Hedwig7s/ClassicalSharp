@@ -11,14 +11,9 @@ namespace Launcher {
 
 	public static class Client {
 		static DateTime lastJoin;
-		public static bool CClient;
 		
 		public static string GetExeName() {
-			return CClient ? GetCExeName() : "ClassicalSharp.exe";
-		}
-		
-		public static string GetCExeName() {
-			return OpenTK.Configuration.RunningOnWindows ? "ClassiCube.exe" : "ClassiCube";
+			return "ClassicalSharp.exe";
 		}
 		
 		public static bool Start(ClientStartData data, bool classicubeSkins, ref bool shouldExit) {
@@ -55,7 +50,7 @@ namespace Launcher {
 		static void StartProcess(string args) {
 			string path = Path.Combine(Environment.CurrentDirectory, GetExeName());
 			
-			if (Configuration.RunningOnMono && !CClient) {
+			if (Configuration.RunningOnMono) {
 				// We also need to handle the case of running Mono through wine
 				if (Configuration.RunningOnWindows) {
 					try {
