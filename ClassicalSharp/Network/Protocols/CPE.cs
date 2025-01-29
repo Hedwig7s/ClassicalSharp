@@ -434,15 +434,23 @@ namespace ClassicalSharp.Network.Protocols {
 			game.Inventory.Hotbar[hotbarIndex] = block;
 		}
 		void HandleSetSpawnpoint() {
-            ushort x = reader.ReadUInt16();
-            ushort y = reader.ReadUInt16();
-            ushort z = reader.ReadUInt16();
+			uint x, y, z;
+			if (reader.ExtendedPositions) { 
+				x = reader.ReadUInt32();
+                y = reader.ReadUInt32();
+                z = reader.ReadUInt32();
+            } else
+			{
+				x = reader.ReadUInt16();
+				y = reader.ReadUInt16();
+				z = reader.ReadUInt16();
+			}
 			byte yaw = reader.ReadUInt8();
 			byte pitch = reader.ReadUInt8();
 			y -= 51;
 			LocalPlayer p = game.LocalPlayer;
 			p.Spawn = new OpenTK.Vector3(x/32f, y/32f, z/32f);
-			p.SpawnHeadX = (float)Utils.PackedToDegrees(yaw);
+			p.SpawnHeadX = (float)Utils.PackedToDegrees(pitch);
 			p.SpawnRotY = (float)Utils.PackedToDegrees(yaw);
         }
 

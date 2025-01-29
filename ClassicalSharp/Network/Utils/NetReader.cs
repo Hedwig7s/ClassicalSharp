@@ -54,14 +54,23 @@ namespace ClassicalSharp.Network {
 			return value;
 		}
 
-		public int ReadInt32() {
-			int value = buffer[index] << 24 | buffer[index + 1] << 16 | 
-				buffer[index + 2] << 8 | buffer[index + 3];
-			index += 4;
-			return value;
-		}
+        public uint ReadUInt32()
+        {
+            uint value = ((uint)buffer[index] << 24) | ((uint)buffer[index + 1] << 16) |
+                         ((uint)buffer[index + 2] << 8) | buffer[index + 3];
+            index += 4;
+            return value;
+        }
 
-		public string ReadString() {
+        public int ReadInt32()
+        {
+            int value = (buffer[index] << 24) | (buffer[index + 1] << 16) |
+                        (buffer[index + 2] << 8) | buffer[index + 3];
+            index += 4;
+            return value;
+        }
+
+        public string ReadString() {
 			int length = GetString(Utils.StringLength);
 			return new String(characters, 0, length);
 		}
