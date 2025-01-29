@@ -94,7 +94,7 @@ namespace ClassicalSharp.Network {
 			"EnvWeatherType", "MessageTypes", "HackControl", "PlayerClick", "FullCP437", "LongerMessages", 
 			"BlockDefinitions", "BlockDefinitionsExt", "BulkBlockUpdate", "TextColors", "EnvMapAspect", 
 			"EntityProperty", "ExtEntityPositions", "TwoWayPing", "InventoryOrder", "InstantMOTD", "FastMap",
-			"ExtendedTextures", "SetHotbar",
+			"ExtendedTextures", "SetHotbar", "SetSpawnpoint",
 			#if !ONLY_8BIT
 			"ExtendedBlocks",
 			#endif

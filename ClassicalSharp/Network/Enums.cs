@@ -51,8 +51,9 @@ namespace ClassicalSharp.Network {
 		public const byte CpeTwoWayPing = 43;
 		public const byte CpeSetInventoryOrder = 44;
 		public const byte CpeSetHotbar = 45;
-		
-		public const byte Count = 46;
+		public const byte CpeSetSpawnpoint = 46;
+
+		public const byte Count = 47;
 	}
 }
 
