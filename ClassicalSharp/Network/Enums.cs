@@ -50,8 +50,9 @@ namespace ClassicalSharp.Network {
 		public const byte CpeSetEntityProperty = 42;
 		public const byte CpeTwoWayPing = 43;
 		public const byte CpeSetInventoryOrder = 44;
+		public const byte CpeSetHotbar = 45;
 		
-		public const byte Count = 45;
+		public const byte Count = 46;
 	}
 }
 

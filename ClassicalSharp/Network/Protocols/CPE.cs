@@ -47,6 +47,7 @@ namespace ClassicalSharp.Network.Protocols {
 			net.Set(Opcode.CpeSetEntityProperty, HandleSetEntityProperty, 7);
 			net.Set(Opcode.CpeTwoWayPing, HandleTwoWayPing, 4);
 			net.Set(Opcode.CpeSetInventoryOrder, HandleSetInventoryOrder, 3);
+			net.Set(Opcode.CpeSetHotbar, HandleSetHotbar, 3);
 		}
 		
 		public override void Tick() {
@@ -229,6 +230,7 @@ namespace ClassicalSharp.Network.Protocols {
 			game.MaxViewDistance = maxViewDist <= 0 ? 32768 : maxViewDist;
 			game.SetViewDistance(game.UserViewDistance);
 		}
+
 		
 		void HandleEnvWeatherType() {
 			game.World.Env.SetWeather((Weather)reader.ReadUInt8());
@@ -424,11 +426,17 @@ namespace ClassicalSharp.Network.Protocols {
 			if (order != 0) { game.Inventory.Map[order - 1] = block; }
 		}
 		
-		#endregion
-		
-		#region Write
-		
-		internal void WritePlayerClick(MouseButton button, bool buttonDown, 
+		void HandleSetHotbar() {
+			BlockID block = reader.ReadBlock();
+			uint hotbarIndex = reader.ReadUInt8();
+			game.Inventory.Hotbar[hotbarIndex] = block;
+		}
+
+        #endregion
+
+        #region Write
+
+        internal void WritePlayerClick(MouseButton button, bool buttonDown, 
 		                               byte targetId, PickedPos pos) {
 			Player p = game.LocalPlayer;
 			writer.WriteUInt8((byte)Opcode.CpePlayerClick);
